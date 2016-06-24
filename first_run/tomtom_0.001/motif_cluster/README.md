@@ -1,0 +1,1 @@
+#motif_cluster contains 6 clusters motif in meme format
