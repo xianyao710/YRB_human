@@ -3,24 +3,26 @@ human CAGE data
 description for raw data should be finished later
 
 #Homer result and processing
-[Raw Homer](https://github.com/xianyao710/YRB_human/tree/master/Homer) results for 9 training sets and 1 test set.
+[Raw Homer](https://github.com/xianyao710/YRB_human/tree/master/latest_result/homer_motif) results for 9 training sets and 1 test set. For example, group1.homer is the test set homer result in first round workflow running, train1.homer is the corresponding training set that contain other 9 groups. 
 
-[Raw Meme](https://github.com/xianyao710/YRB_human/tree/master/Raw_meme) results
+[Raw Meme](https://github.com/xianyao710/YRB_human/tree/master/latest_result/meme_motif) results
 
-[filtered Meme](https://github.com/xianyao710/YRB_human/tree/master/New_meme) results using theshold -evalue 1e-20
+[renamed Meme](https://github.com/xianyao710/YRB_human/tree/master/latest_result/rename_meme) In order to cluster training set motifs, we have to rename the motif in each group. For example, the original Motif_1 in train1.meme file is renamed train_1_1.
 
 #Tomtom motif comparison and clustering
 
-Tomtom clustering using -thresh 0.001 -evalue
-[tomtom](https://github.com/xianyao710/YRB_human/tree/master/first_run/tomtom_0.001)
+Tomtom clustering using -thresh 0.0001 -evalue
+[tomtom](https://github.com/xianyao710/YRB_human/tree/master/latest_result/Cluster_result/tomtom_out)
 
 Graphical analysis using networkx package
 
-![raw training motifs](https://github.com/xianyao710/YRB_human/blob/master/figure/hg_motif_cluster.png)
 
-![filtered using 9 degree](https://github.com/xianyao710/YRB_human/blob/master/figure/hg_motif_cluster_filter.png)
+![filtered using 9 degree](https://github.com/xianyao710/YRB_human/blob/master/latest_result/Cluster_result/human_clusters.png)
 
-6 clusters detected
+10 clusters that have more then 9 nodes were detected.
+
+#Consensus motif for each cluster
+By implementing [MotifSetReduce.pl](https://github.com/BrendelGroup/bghandbook/blob/master/demo/MotifSetReduce/MotifSetReduce.pl) for each cluster, we got [consensus motif](https://github.com/xianyao710/YRB_human/tree/master/latest_result/Cluster_result/cluster_consensus) and [seqLogo](https://github.com/xianyao710/YRB_human/tree/master/latest_result/Cluster_result/cluster_seqLogo) repectively.
 
 #Discussion
-If these analysis and processing are good enough, we can extract consensus motif for each group.
+Next step is to compare these motif to known motif database.
