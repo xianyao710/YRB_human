@@ -1,0 +1,1 @@
+#hg_CAGE_anno.out is the output file of homer annotatePeaks.pl using -size 1000 -hist 5 -m <motifs> 
